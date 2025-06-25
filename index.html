@@ -1,735 +1,336 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vijesh T | Portfolio</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-  <link rel="icon" type="image/x-icon" href="vt.ico">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      color: #f8f9fa;
-      scroll-behavior: smooth;
-      overflow-x:hidden;
-    }
-
-    .container {
-      max-width: 960px;
-    }
-
-    header {
-      padding: 60px 0 30px;
-    }
-
-    .section-title {
-      margin-top: 60px;
-      margin-bottom: 30px;
-      text-align: center;
-      position: relative;
-      color: #00d1ff;
-    }
-
-    .section-title::after {
-      content: "";
-      width: 60px;
-      height: 3px;
-      background-color: #00d1ff;
-      display: block;
-      margin: 10px auto 0;
-      border-radius: 3px;
-    }
-
-    .section {
-      opacity: 0;
-      filter: brightness(0.4);
-      transform: translateX(50px);
-      transition: all 1s ease-out;
-      padding: 40px 30px;
-      background: #1e2b3c;
-      border-radius: 20px;
-      margin-bottom: 40px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-    }
-
-    .section.fade-left {
-      transform: translateX(-50px);
-    }
-
-    .section.revealed {
-      opacity: 1;
-      filter: brightness(1);
-      transform: translateX(0);
-    }
-
-    .project h5 a, .achievement a {
-      color: #00d1ff;
-      text-decoration: none;
-    }
-
-    .project h5 a:hover, .achievement a:hover {
-      text-decoration: underline;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px;
-      background: #13202d;
-      margin-top: 60px;
-    }
-
-    .card-icon {
-      font-size: 30px;
-      margin-right: 10px;
-      color: #00d1ff;
-    }
-
-    .profile-img {
-      max-width: 150px;
-      border-radius: 50%;
-      border: 4px solid #00d1ff;
-      box-shadow: 0 0 15px #00d1ff;
-    }
-
-    .about-text {
-      padding-left: 20px;
-    }
-
-    .btn-custom {
-      background-color: #00d1ff;
-      color: #000;
-      font-weight: 500;
-      transition: 0.3s ease;
-    }
-
-    .btn-custom:hover {
-      background-color: #00aacc;
-      color: white;
-    }
-
-    a, a:visited {
-      color: #00d1ff;
-    }
-
-    @media (max-width: 768px) {
-      .d-flex.align-items-center {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .about-text {
-        padding-left: 0;
-        margin-top: 20px;
-      }
-    }
-    body {
-  padding-top: 80px; /* prevent content being hidden behind fixed navbar */
-  scroll-behavior: smooth;
-}
-
-/* Navbar blur and transition */
-.navbar {
-      backdrop-filter: blur(10px);
-      background-color: #13202d;
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    }
-    .navbar {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-    /* Scroll effect */
-    .navbar.scrolled {
-      background-color: rgba(0, 0, 0, 0.9);
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
-    }
-
-    /* Hover effects */
-    .navbar-nav .nav-link:hover,
-    .dropdown-menu .dropdown-item:hover {
-      color: #17d4fc !important;
-    }
-
-    .dropdown-menu-dark {
-      background-color: #1f1f1f;
-    }
-    /* Timeline Base */
-.timeline {
-  position: relative;
-  margin: 40px 0;
-  padding-left: 40px;
-  border-left: 2px solid #fff;
-}
-
-.timeline::before {
-  content: "";
-  position: absolute;
-  left: 18px;
-  top: 0;
-  bottom: 0;
-  width: 4px;
-  background: #fff;
-}
-
-/* Timeline Item */
-.timeline-item {
-  position: relative;
-  margin-bottom: 40px;
-  padding-left: 20px;
-}
-
-.timeline-item:last-child {
-  margin-bottom: 0;
-}
-
-/* Icon (Emblem) */
-.timeline-icon {
-  position: absolute;
-  left: -15px;
-  background: #fff;
-  border-radius: 50%;
-  width: 36px;
-  height: 36px;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 3px solid #fff;
-  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1);
-}
-
-.timeline-icon img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Content Box */
-.timeline-content {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 16px 20px;
-  border: 1px solid white;
-  border-radius: 12px;
-  color: #fff;
-}
-
-.timeline-content h5 {
-  margin-top: 0;
-  margin-bottom: 8px;
-  font-size: 1.1rem;
-  color: #fff;
-}
-
-.edu-sub {
-  font-size: 0.95rem;
-  color: #ccc;
-  margin-bottom: 4px;
-}
-
-.edu-date-location {
-  font-size: 0.85rem;
-  color: #aaa;
-  margin-bottom: 10px;
-}
-
-.timeline-content p {
-  margin: 0 0 6px;
-}
-
-/* Responsive */
-@media screen and (max-width: 768px) {
-  .timeline {
-    padding-left: 20px;
-  }
-
-  .timeline-icon {
-    width: 30px;
-    height: 30px;
-    left: -13px;
-  }
-
-  .timeline-content {
-    padding: 12px 16px;
-  }
-}
-
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vijesh | Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="vt.ico">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Add this in <head> to load Bootstrap Icons -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm">
-  <div class="container">
-    <a class="navbar-brand fw-bold text-info d-flex align-items-center" href="#">
-      <img src="vt.ico" alt="VT Logo" width="30" height="30" class="me-2" style="border-radius: 5px;">
-      Vijesh T
-    </a>
-    
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="#about"><i class="fas fa-user me-1"></i> About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#project"><i class="fas fa-code me-1"></i> Projects</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#resume">
-            <i class="fas fa-file-alt me-1"></i> Resume
-          </a>
-        </li>      
-        <li class="nav-item">
-          <a class="nav-link" href="#contact"><i class="fas fa-envelope me-1"></i> Contact</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-            data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="fas fa-link me-1"></i> Quick Links
-          </a>
-          <ul class="dropdown-menu dropdown-menu-dark">
-            <li><a class="dropdown-item" href="#education"><i class="fas fa-graduation-cap me-2"></i> Education</a></li>
-            <li><a class="dropdown-item" href="#skills"><i class="fas fa-tools me-2"></i> Skills</a></li>
-            <li><a class="dropdown-item" href="#achievement"><i class="fas fa-trophy me-2"></i> Achievements</a></li>
-            <li><a class="dropdown-item" href="#certification"><i class="fas fa-certificate me-2"></i> Certifications</a></li>
-            <li><a class="dropdown-item" href="#workshop"><i class="fas fa-chalkboard-teacher me-2"></i> Workshops</a></li>
-            <li><a class="dropdown-item" href="#activities"><i class="fas fa-user-friends me-2"></i> Activities</a></li>
-          </ul>
-        </li>
-      </ul>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-info d-flex align-items-center" href="#">
+                <img src="vt.ico" alt="VT Logo" width="30" height="30" class="me-2" style="border-radius:5px;">
+                Vijesh T
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about"><i class="fas fa-user-circle me-1"></i>About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects"><i class="fas fa-project-diagram me-1"></i>Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#resume"><i class="fas fa-file-alt me-1"></i>Resume</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact"><i class="fas fa-envelope me-1"></i>Contact</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-link me-1"></i>Quick Links
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item" href="#education"><i class="fas fa-graduation-cap me-2"></i>Education</a></li>
+                            <li><a class="dropdown-item" href="#skills"><i class="fas fa-code me-2"></i>Skills</a></li>
+                            <li><a class="dropdown-item" href="#achievements"><i class="fas fa-trophy me-2"></i>Achievements</a></li>
+                            <li><a class="dropdown-item" href="#certificates"><i class="fas fa-certificate me-2"></i>Certificates</a></li>
+                            <li><a class="dropdown-item" href="#workshops"><i class="fas fa-chalkboard-teacher me-2"></i>Workshops</a></li>
+                            <li><a class="dropdown-item" href="#activities"><i class="fas fa-user-friends me-2"></i>Activities</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container py-5">
+        <header class="text-center">
+            <h1>Hi, I am <strong>Vijesh</strong></h1>
+            <p class="lead">Information Technology Undergraduate | MIT, Anna University</p>
+            <div class="mt-3">
+                <a class="btn btn-outline-light me-2" href="https://www.linkedin.com/in/vijesh-t-8968b431a/" target="_blank">
+                    <i class="fab fa-linkedin me-2"></i>LinkedIn
+                </a>
+                <a class="btn btn-outline-light me-2" href="https://github.com/Vijesh1407" target="_blank">
+                    <i class="fab fa-github me-2"></i>GitHub
+                </a>
+            </div>
+        </header>
+        <section id="about" class="section fade-left d-flex align-items-center">
+            <img src="vijesh.jpg" alt="Vijesh Profile" class="profile-img me-4">
+            <div class="about-text">
+                <h2 class="section-title"><i class="fas fa-user-circle me-2"></i>About Me</h2>
+                 <p>Enthusiastic IT undergraduate with strong DSA skills and a passion for solving real-world problems through code. Keen on emerging technologies and committed to continuous learning and innovation.</p>
+            </div>
+        </section>
+        <section id="education" class="section fade-left">
+            <h2 class="section-title"><i class="fas fa-graduation-cap me-2"></i>Education</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <img src="au.jpg" alt="MIT Logo">
+                    </div>
+                    <div class="timeline-content">
+                        <h5>Madras Institute of Technology, Anna University</h5>
+                        <p class="edu-sub">B.Tech – Information Technology</p>
+                        <p class="edu-date-location">2023 – Present | Chennai, Tamil Nadu, India</p>
+                        <p><strong>CGPA:</strong> 8.94 (Relative Grading, up to 3rd Semester)</p>
+                        <p>Pursuing a Bachelor's degree with a focus on programming, AI/ML, and software development. Engaged in hands-on learning through academic projects and collaborative coursework.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <img src="hebron.jpg" alt="Hebron Logo">
+                    </div>
+                    <div class="timeline-content">
+                        <h5>Hebron Matriculation Higher Secondary School</h5>
+                        <p class="edu-sub">HSC – State Board (Science Stream)</p>
+                        <p class="edu-date-location">2021 – 2023 | Nagercoil, Tamil Nadu, India</p>
+                        <p><strong>Score:</strong> 585/600 (97.5%)</p>
+                        <p>Studied <strong>Maths, Physics, Chemistry, and Biology</strong>
+                        Scored <strong>99/100</strong> in Maths, Physics, and Biology, and <strong>100/100</strong> in Chemistry.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="skills" class="section fade-left">
+            <h2 class="section-title"><i class="fas fa-code me-2"></i>Skills</h2>
+            <h4 class="text-center text-info mt-4">Programming Languages</h4>
+            <div class="row text-center">
+                <div class="col-md-4 mb-4">
+                    <img src="c.svg" alt="C" width="60">
+                    <p class="mt-2">C</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <img src="c++.svg" alt="C++" width="60">
+                    <p class="mt-2">C++</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <img src="python.svg" alt="Python" width="60">
+                    <p class="mt-2">Python</p>
+                </div>
+            </div>
+            <h4 class="text-center text-info mt-4">Web Technologies</h4>
+            <div class="row text-center">
+                <div class="col">
+                    <img src="html.svg" alt="HTML" width="60">
+                    <p class="mt-2">HTML</p>
+                </div>
+                <div class="col">
+                    <img src="css.svg" alt="CSS" width="60">
+                    <p class="mt-2">CSS</p>
+                </div>
+                <div class="col">
+                    <img src="js.svg" alt="JavaScript" width="60">
+                    <p class="mt-2">JavaScript</p>
+                </div>
+                <div class="col">
+                    <img src="react.svg" alt="ReactJS" width="60">
+                    <p class="mt-2">ReactJS</p>
+                </div>
+                <div class="col">
+                    <img src="bootstrap.svg" alt="Bootstrap" width="60">
+                    <p class="mt-2">Bootstrap</p>
+                </div>
+            </div>
+            <h4 class="text-center text-info mt-4">Databases</h4>
+            <div class="row text-center">
+                <div class="col-md-3 mb-4">
+                    <img src="mysql.svg" alt="MySQL" width="60">
+                    <p class="mt-2">MySQL</p>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <img src="oracle.svg" alt="Oracle" width="60">
+                    <p class="mt-2">Oracle</p>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <img src="mongodb.svg" alt="MongoDB" width="60">
+                    <p class="mt-2">MongoDB</p>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <img src="postgresql.svg" alt="PostgreSQL" width="60">
+                    <p class="mt-2">PostgreSQL</p>
+                </div>
+            </div>
+            <h4 class="text-center text-info mt-4">Other Tools and Technologies</h4>
+            <div class="row row-cols-2 row-cols-md-6 text-center g-4">
+                <div class="col">
+                    <img src="github.svg" alt="GitHub" width="60">
+                    <p class="mt-2">GitHub</p>
+                </div>
+                <div class="col">
+                    <img src="excel.png" alt="Excel" width="60">
+                    <p class="mt-2">Excel</p>
+                </div>
+                <div class="col">
+                    <img src="canva.svg" alt="Canva" width="60">
+                    <p class="mt-2">Canva</p>
+                </div>
+                <div class="col">
+                    <img src="word.jpg" alt="Word" width="60">
+                    <p class="mt-2">Word</p>
+                </div>
+                <div class="col">
+                    <img src="ppt.svg" alt="PowerPoint" width="60">
+                    <p class="mt-2">PowerPoint</p>
+                </div>
+                <div class="col">
+                    <img src="vsc.svg" alt="VS Code" width="60">
+                    <p class="mt-2">VS Code</p>
+                </div>
+            </div>
+            <h4 class="text-center text-info mt-4">Operating Systems</h4>
+            <div class="d-flex justify-content-center gap-5 flex-wrap text-center mt-4">
+                <div>
+                    <img src="linux.svg" alt="Linux" width="60">
+                    <p class="mt-2">Linux</p>
+                </div>
+                <div>
+                    <img src="windows.jpg" alt="Windows" width="60">
+                    <p class="mt-2">Windows</p>
+                </div>
+            </div>
+        </section>
+        <section id="projects" class="section fade-left">
+            <h2 class="section-title"><i class="fas fa-project-diagram me-2"></i>Projects</h2>
+            <div class="project">
+                <h5>🌍 Tourist Booking Hub</h5>
+                <p>Developed the <span class="highlight">frontend interface</span> of a comprehensive tourist booking platform. This project features interactive sections for <span class="highlight">Stays</span>, <span class="highlight">Flights</span>, and <span class="highlight">Attractions</span>, complemented by integrated search forms and dynamic destination listings. Emphasis was placed on delivering a consistent and responsive user experience.</p>
+                <div class="tech-stack">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>Javascript</span>
+                    <span>Bootstrap</span>
+                </div>
+                <a class="github-btn" href="https://github.com/Vijesh1407/Tourist-booking-Hub" target="_blank">
+                    View on GitHub ↗
+                </a>
+            </div>
+            <div class="project">
+                <h5>📘 Student Record Management System</h5>
+                <p>Built an intuitive <span class="highlight">student management interface</span> for handling academic records. Includes functionalities to <span class="highlight">add</span>, <span class="highlight">update</span>, and <span class="highlight">delete</span> records with validation to prevent duplicate roll numbers and emails. Designed for seamless interaction with a responsive layout.</p>
+                <div class="tech-stack">
+                    <span>ReactJS</span>
+                    <span>Bootstrap</span>
+                    <span>JavaScript</span>
+                </div>
+                <a class="github-btn" href="https://github.com/Vijesh1407/student-record-management-system" target="_blank">
+                    View on GitHub ↗
+                </a>
+            </div>
+            <div class="project">
+                <h5>🚦 Adaptive Traffic Routing System</h5>
+                <p>Built an <span class="highlight">interactive traffic routing system</span> in C++ using <span class="highlight">Dijkstra’s algorithm</span> to find the <span class="highlight">shortest path between cities</span> based on user-defined travel times. The system supports <span class="highlight">live traffic updates</span>, enabling dynamic <span class="highlight">route optimization</span> to simulate real-world congestion handling and travel planning.</p>
+                <div class="tech-stack">
+                    <span>C++</span>
+                    <span>Dijkstra’s Algorithm</span>
+                </div>
+                <a class="github-btn" href="https://github.com/Vijesh1407/Adaptive-Traffic-Routing-Solution" target="_blank">
+                    View on GitHub ↗
+                </a>
+            </div>
+            <div class="project">
+                <h5>🏥 Emergency Patient Queue System</h5>
+                <p>Developed a real-time <span class="highlight">patient priority queue</span> in C++ using the <span class="highlight">Leftist Heap</span> data structure to efficiently manage emergency room operations. The system automatically <span class="highlight">prioritizes patients</span> based on severity and allows <span class="highlight">dynamic queue merging</span> for specialized departments like Cardiology.</p>
+                <div class="tech-stack">
+                    <span>C++</span>
+                    <span>Leftist Heap</span>
+                    <span>Heap-based Priority Queue</span>
+                </div>
+                <a class="github-btn" href="https://github.com/Vijesh1407/Emergency-Patient-Queue-System" target="_blank">
+                    View on GitHub ↗
+                </a>
+            </div>
+            <div class="project">
+                <h5>📘 DSA Learning Path Optimizer</h5>
+                <p>Created a <span class="highlight">smart learning assistant</span> in C++ using <span class="highlight">AVL Tree</span> and <span class="highlight">Splay Tree</span> to manage and access DSA topics efficiently. The AVL Tree ranks topics by <span class="highlight">difficulty</span>, while the Splay Tree reorders based on <span class="highlight">access frequency</span>, promoting <strong>active recall</strong> of key concepts.</p>
+                <div class="tech-stack">
+                    <span>C++</span>
+                    <span>AVL Tree</span>
+                    <span>Splay Tree</span>
+                </div>
+                <a class="github-btn" href="https://github.com/Vijesh1407/Learning-Path-DSA" target="_blank">
+                    View on GitHub ↗
+                </a>
+            </div>
+            <div class="project">
+                <h5>📊 RTO Database System</h5>
+                <p>Designed an <span class="highlight">Entity-Relationship Diagram (ERD)</span> for a Regional Transport Office (RTO) management system. Focused on ensuring <span class="highlight">data integrity</span> and applying <span class="highlight">normalization techniques</span> to eliminate redundancy and boost future scalability for managing registrations, ownership transfers, fine processing, and employee operations.</p>
+                <div class="tech-stack">
+                    <span>Database Design</span>
+                    <span>ERD Modeling</span>
+                    <span>Normalization</span>
+                </div>
+                <a class="github-btn" href="https://github.com/Vijesh1407/RTO-Database-design" target="_blank">
+                    View on GitHub ↗
+                </a>
+            </div>
+        </section>
+        <section id="achievements" class="section fade-left">
+            <h2 class="section-title"><i class="fas fa-trophy me-2"></i>Achievements</h2>
+            <ul class="achievement">
+                <li>Achieved <span class="highlight">90%</span> (Elite Gold) in <span class="highlight">NPTEL - Python for Data Science</span> – Top 1%</li>
+                <li>Achieved <span class="highlight">82%</span> (Elite Silver) in <span class="highlight">NPTEL - Introduction to Machine Learning</span> – Top 1%</li>
+                <li>Achieved <span class="highlight">86.6 percentile</span> (Top 13.4%) in <span class="highlight">JEE (Main) 2023</span></li>
+                <li>Achieved School <span class="highlight">Second Rank</span> Overall and <span class="highlight">First Rank </span>in My Academic Stream</li>
+            </ul>
+        </section>
+        <section id="certificates" class="section fade-left">
+            <h2 class="section-title"><i class="fas fa-certificate me-2"></i>Certificates</h2>
+            <ul class="achievement">
+                <li><a href="data_analysis_excel.pdf" target="_blank"> Preparing Data for Analysis with Microsoft Excel – Microsoft (Coursera)</a></li>
+                <li><a href="excel_copilot.pdf" target="_blank"> Excel and Copilot Fundamentals – Microsoft (Coursera)</a></li>
+                <li><a href="python_data_science.pdf" target="_blank">Python for Data Science – NPTEL</a></li>
+                <li><a href="soft_skills.pdf" target="_blank">Enhancing Soft Skills and Personality – NPTEL</a></li>
+                <li><a href="python_dsa.pdf" target="_blank">Programming, Data Structures and Algorithms Using Python – NPTEL</a></li>
+                <li><a href="electrowiz.pdf" target="_blank">Electrowiz'25 Paper Presentation – VEC</a></li>
+                <li><a href="hackz.jpg" target="_blank"> Hackz'24 – CSEA_CEG</a></li>
+                <li><a href="intro_to_ml.pdf" target="_blank">Introduction to Machine Learning – NPTEL</a></li>
+                <li><a href="vijesh_jee.pdf" target="_blank">JEE (Main) 2023</a></li>
+            </ul>
+        </section>
+        <section id="workshops" class="section fade-left">
+            <h2 class="section-title"><i class="fas fa-chalkboard-teacher me-2"></i>Workshops</h2>
+            <ul class="achievement">
+                <li><a href="Google_ds_workshop.jpg">Applied Data Science and Machine Learning – ITA, MIT</a></li>
+                <li><a href="cricket_data_analysis.jpg">Cricket Data Analysis using PostgreSQL – NPTEL</a></li>
+                <li><a href="strategy_formulation.jpg">Mastering Strategy Formulation with ChatGPT – NPTEL</a></li>
+            </ul>
+        </section>
+        <section id="resume" class="section fade-left text-center">
+            <h2 class="section-title"><i class="fas fa-file-alt me-2"></i>Resume</h2>
+            <p>Check out my resume.</p>
+            <a href="vijesh_resume.pdf" target="_blank" class="btn btn-primary mt-2">
+                View Resume ↗
+            </a>
+        </section>
+        <section id="activities" class="section fade-left">
+            <h2 class="section-title"><i class="fas fa-user-friends me-2"></i>Activities and Roles</h2>
+            <ul>
+                <li><span class="highlight">Placement Representative</span> – Department of Information Technology, MIT, Anna University (Jan 2025 – Present)</li>
+                <li><span class="highlight">NSO Volunteer</span> – MIT, Anna University (Sep 2023 – Aug 2024)</li>
+            </ul>
+        </section>
+        <section id="contact" class="section fade-left">
+            <h2 class="section-title"><i class="fas fa-envelope me-2"></i>Contact Me</h2>
+            <p><i class="fas fa-phone-alt card-icon"></i> <strong>Phone:</strong> <a href="tel:+916383984328">+91 63839 84328</a></p>
+            <p><i class="fas fa-envelope card-icon"></i> <strong>Email:</strong> <a href="mailto:vijeshthamodharan@gmail.com">vijeshthamodharan@gmail.com</a></p>
+            <p><i class="fas fa-map-marker-alt card-icon"></i> <strong>Location:</strong> Tamil Nadu, India</p>
+        </section>
+        <footer class="text-center mt-5">
+            <p>Thanks for scrolling! <i class="fas fa-smile text-warning"></i> | <a href="#">Back to top ↑</a></p>
+            <p>© 2025 Vijesh T</p>
+        </footer>
     </div>
-  </div>
-</nav>
-
-  <div class="container py-5">
-    <header class="text-center">
-      <h1>Hi, I am <strong>Vijesh T</strong></h1>
-      <p class="lead">Information Technology Undergraduate | MIT, Anna University</p>
-      <div class="mt-3">
-        <a class="btn btn-outline-light me-2" href="https://www.linkedin.com/in/vijesh-t-8968b431a/" target="_blank">
-          <i class="fab fa-linkedin"></i> LinkedIn
-        </a>
-        <a class="btn btn-outline-light me-2" href="https://github.com/Vijesh1407" target="_blank">
-          <i class="fab fa-github"></i> GitHub
-        </a>
-        <a class="btn btn-outline-light" href="https://leetcode.com/u/Vijesh_1407/" target="_blank">
-          <i class="fas fa-code"></i> LeetCode
-        </a>
-      </div>
-    </header>
-
-    <section id="about" class="section fade-left d-flex align-items-center">
-  <img src="vijesh.jpg" alt="Vijesh Profile" class="profile-img me-4">
-  <div class="about-text">
-    <h2 class="section-title"><i class='fas fa-user-circle me-2'></i> About Me</h2>
-    <p>Enthusiastic and detail-oriented Information Technology undergraduate from Anna University. Proficient in Data
-      Structures and Algorithms, eager to apply my programming skills to solve real-world challenges and contribute to
-      innovative industry solutions. Quick learner with a keen interest in emerging technologies and a commitment to
-      continuous growth.</p>
-  </div>
-</section>
-<section id="education" class="section fade-left">
-  <h2 class="section-title">🎓 Education</h2>
-  <div class="timeline">
-
-    <!-- College Entry -->
-    <div class="timeline-item">
-      <div class="timeline-icon">
-        <img src="data:image/png;base64,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" alt="MIT Logo" />
-      </div>
-      <div class="timeline-content">
-        <h5>Madras Institute of Technology, Anna University</h5>
-        <p class="edu-sub">B.Tech – Information Technology</p>
-        <p class="edu-date-location">2023 – Present | Chennai, Tamil Nadu, India</p>
-        <p><strong>CGPA:</strong> 9.0 (Relative Grading, up to 2nd Semester)</p>
-        <p>
-          Pursuing a Bachelor's degree with a focus on programming, AI/ML, and software development.
-          Engaged in hands-on learning through academic projects and collaborative coursework.
-        </p>
-      </div>
-    </div>
-
-    <!-- HSC Entry -->
-    <div class="timeline-item">
-      <div class="timeline-icon">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0_K7y-6D8-Xi9Qab6tueX5uZ0M-ESnQO4dg&s" alt="Hebron School Logo" />
-      </div>
-      <div class="timeline-content">
-        <h5>Hebron Matriculation Higher Secondary School</h5>
-        <p class="edu-sub">HSC – State Board (Science Stream)</p>
-        <p class="edu-date-location">2021 – 2023 | Nagercoil, Tamil Nadu, India</p>
-        <p><strong>Score:</strong> 97.5%</p>
-        <p>
-          Studied <strong>Maths, Physics, Chemistry, and Biology</strong><br>
-          Scored <strong>99/100</strong> in Maths, Physics, and Biology, and <strong>100/100</strong> in Chemistry.
-        </p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
-    <section id="skills" class="section fade-left">
-  <h2 class="section-title">🧠 Skills</h2>
-
-  <h4 class="text-center text-info mt-4">Programming Languages</h4>
-  <div class="row text-center">
-    <div class="col-md-4 mb-4">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C" width="60">
-      <p class="mt-2">C</p>
-    </div>
-    <div class="col-md-4 mb-4">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++" width="60">
-      <p class="mt-2">C++</p>
-    </div>
-    <div class="col-md-4 mb-4">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" width="60">
-      <p class="mt-2">Python</p>
-    </div>
-  </div>
-
-  <h4 class="text-center text-info mt-4">Web Technologies</h4>
-  <div class="row row-cols-2 row-cols-md-5 text-center g-4">
-    <div class="col">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" width="60">
-      <p class="mt-2">HTML</p>
-    </div>
-    <div class="col">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" width="60">
-      <p class="mt-2">CSS</p>
-    </div>
-    <div class="col">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" width="60">
-      <p class="mt-2">JavaScript</p>
-    </div>
-    <div class="col">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" width="60">
-      <p class="mt-2">ReactJS</p>
-    </div>
-    <div class="col">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-plain.svg" alt="Bootstrap" width="60">
-      <p class="mt-2">Bootstrap</p>
-    </div>
-  </div>
-
-  <h4 class="text-center text-info mt-4">Databases</h4>
-  <div class="row text-center">
-    <div class="col-md-3 mb-4">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" width="60">
-      <p class="mt-2">MySQL</p>
-    </div>
-    <div class="col-md-3 mb-4">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg" alt="Oracle" width="60">
-      <p class="mt-2">Oracle</p>
-    </div>
-    <div class="col-md-3 mb-4">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" width="60">
-      <p class="mt-2">MongoDB</p>
-    </div>
-    <div class="col-md-3 mb-4">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" width="60">
-      <p class="mt-2">PostgreSQL</p>
-    </div>
-  </div>
-
-  <h4 class="text-center text-info mt-4">Other Tools & Technologies</h4>
-  <div class="row row-cols-2 row-cols-md-5 text-center g-4">
-    <div class="col">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" width="60">
-      <p class="mt-2">GitHub</p>
-    </div>
-    <div class="col">
-      <img src="https://cdn.worldvectorlogo.com/logos/canva-1.svg" alt="Canva" width="60">
-      <p class="mt-2">Canva</p>
-    </div>
-    <div class="col">
-      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAJQAlAMBEQACEQEDEQH/xAAcAAEAAQUBAQAAAAAAAAAAAAAABwECBAUGAwj/xABKEAABAgQBBA0JBAYLAAAAAAABAAIDBAURBhIUFiEHMUFRUlNVgZGSk6GxExUiMmFxctHSYmOywRczNDVUcyMkNkJDRHSCosLw/8QAGgEBAAMBAQEAAAAAAAAAAAAAAAMEBQEGAv/EAC8RAQABAwIDCAEEAgMAAAAAAAABAgMRElEEExUFFCExMlKRsWEzQXGBIqHB0eH/2gAMAwEAAhEDEQA/AJxQEBAQYdQqcpTYQiTkYQwTYCxJd7gNaktWa7s4ohFdvW7UZrnDWaYUfjYvYuVnp9/ZW6jY3n4k0wo/GxexcnT7+x1CxvPxJphR+Ni9i5On39jqFjefiTTCj8bF7FydPv7HULG8/EmmFH42L2Lk6ff2OoWN5+JNMKPxsXsXJ0+/sdQsbz8SaYUfjYvYuTp9/Y6hY3n4k0wo/GxexcnT7+x1CxvPxJphR+Ni9i5On39jqFjefiTTCj8bF7FydPv7HULG8/EmmFH42L2Lk6ff2OoWN5+JNMKPxsXsXJ0+/sdQsbz8SDGFHJt5WL2LvknT7+x1CxvPxLcyszBm4DY0tEbEhO2nNKqV0VUTpqjxXKK6a6dVM+D2Xy+hAQEEd43iOdXCxxu1kJoaN6+tbnZ0RFjP5YPaMzN/G0OfV5QEMCGBDAhgQwIYEMCGBDAhgQwIM2Sqk3IwjCl4pawuyiPb/wCCirsUXJzVCa3frtximUrrzT04gICCOca/v+J/LZ4Ld7P/AEI/mWB2j+vP8Q0KuqIgICAgICAgICAgICAgmReVetEBAQRzjX9/xP5bPBbvZ/6EfzLA7R/Xn+IaFXlEQFwEBAQEBAQEBAQEBB2dd2QabS518pCgRpuLCdkxCwgNad652ysSz2dcu0xVM4y9Fc4yiirTjLWfpSluSo/at+Sm6VV7kff6fafpTluSo/at+SdKq9x3+n2n6U5bkqP2rfknSqvcd/p9rlsQYpZVqk6bhy0SE1zGtyS++0r/AA/DVWbenLP4iqL1zXDW+d/u39dT6J3Qcs87/dv66aJ3OWp53+7f100S7yzzx92/rpok5b2laoyNEyLuY/cDjtqHVMVaZ8ybeIy2cOIHNuSFLHjCCYxK7KbvhdMGU3fCGDKbvhDBlN3whgym74QwZTd8IYMpu+EMGU3fCGHKvcXuc5xu5xuSdslfceC2tuuuKXQUQEFEdEFpKBdBjx9UxAP2vzCq3/XSlo9MtzB9TnU9PkrT5vRfTggICAgICAg1xXUjbULDtRrzYxprIT/IkB4fEybXvbwKr3uJt2Ma/wB0tuzXc9Kyu0Co0F0FtShw2GMCWZD8oarX8QvqzxFu9nRPkXLVdv1NUVMjdHT8EV2oyUGcloEEwYzctmXGDSR7lUr46xRVNNU+MfhPTwt2qIqiGprNJnKLO5nUGNZGyA+zXZQIO1r5ip7V6i7Tqo8kdyiq3OmpgE6r7ykfDqjseYjyMowJYC19ccalS6jw+8/Cz3S7t/tymrcNxvhXlZjx/wBogfF8lVv+qlLR6ZbqD6nOpqVafN6L6cEBAQEBAQEGtJXUjtNiid8hiKLKuPozMA29rmkEdxcs3tO3qsxVt/yucFVi5Mbuj2XZQxKDKzbRrl5gB3wuBHjkqp2XXi7NM/vCxx1P+ETtKKGQ3xojYUP14jgxvvJsFuzMUxMz+zMxnwh9ESsOFISkpKA5LWMbBYN+zdroC8lVM11TV/bfiIpiIR3sxSdotNn2jU4PgPPt1Ob/ANlrdlV51Uf2ocdT401OHw/KZ/XafK7YiTDA4b4Bue4FaV+rRaqq/Cnap1VxCbMYT3m/DFSmQ7JcIJYzX/ed6I7yvOcLRrvU0/n6a9+rTbqlAA1AAbi9SxIeMX9og/EPEKrf9VKWj0y3cH1OdTUq0+b0X04ICAgICAgINYupWxw3O+bq/T5raayYYHn7JNndxKh4ijmWqqfwktVaLkSmbG8rnuFKnCAu5sB0RotfWz0vyXn+Er0X6Z/LW4mnVaqhEmBpMz+K6dDIuyHE8s//AGDKHeAtzja9Fiqf6ZnD06rsJHx5WfNc5QGh1rzwiPtwAMk36/csngrPMpuT+GhxF3RNH8vbZLkjOYQm3tblPli2O33A+l/xJXz2fXo4iPz4HF06rM/hH2xdKZzi2DFIu2Wgvi85GSPxHoWp2jXpsTG8qXB05uxOzrNmCeEGiysmHWMxHyiL7bWC/iWqj2XRm5Ne0fa1xtWKIp3RISt1mPGJ+0QfiHiqt/1UpKfTLewfU51NSrT5r19OCAgICAgICDVldSqG+4bHcKD6AoM22rYekph/+PLNyx7bWcOm68rfo5V2qnaW5bq10RLhNiulGBX6tFiNP9SBlR8WWb/gHStPtO7m1RG/j/r/ANUuCt4rqnbwarZam86xIJVrvQlpdrD8TvSPdk9Csdl0aLOrefpHxtWbmNoSbR40Ov4VlokU3E3K5MT3kWd33WLdp5N6Yj9paNuYrtx+XF7DlPiQItXjzDbPhuZLe5zcouH4Vo9q3Iq0RH7+P/SpwNExNU/00+y7PZxiSFKNN2ykAAgbjnaz3ZKsdmW9NnVuj4yvNzGzhitFUYs1EcyPByTbWqt/1Upbcf4y2UOajBvr7u8rFMeCCYhdnUbhdy+sOYgzqNwu5MGIM6jcLuTBiDOo3C7kwYgzqNwu5MGIM6jcLuTBiDOo3C7kwYgzqNwu5MGIWI6XQTBsTTuc4afLuJypWO5mvgmzh4kcy8/2nb03tW8NXgqs28bOiotMbT5iqRWi2dzhj82S0eIJ51Uu3ZuRTG0YWKKNMzO8oKxHO+ca/UZvbbFmH5Pwg2b3AL0vD0aLNNP4Y1yrVcmUobEc9nGG4kqTd0rMOaBvB3peJKxu06NN7VvDR4KrNvTs6ai01tOdP5DQBMTb421wgFTu3Jr0/iIhZopinKB8TzwqOIqlNg3bEmHZJ+yPRHcAvS8NRos00/hj3atVyZau6mfGGJN/roPv+SrX/VSlt+mWfD9XnVinyQT5rl9OCAgICAgICC664KXQdpsYV+To1QnYdSmWy8vHhBwe86stp2veQ49Czu0bFV2mmaIzMLnCXYoqmKpxEu5rGOKCylTj5OqS8WYEB/kobSbvdY2HTZZlrgr01xFVMxGV2vibcUzMSg3XbWblekY8O02Lq9J0WqTrajMtl5eYgt9N+1lNOrucVndo2KrtFM0RmYlb4S5TRVMVT4S76rY5oMOlzb5Oqy8WYbBcYTGk3c62q2rfWXb4K9NcRNM4Xa+ItxTOJQS0WaANwL0ssiPIujrEmv18H3/JVr/qpS0emWxh+rzqxT5IJ81y+nBAQEBAQEBAuuOqEoLSUdUugtJQUKO4UJQUKOrboMeZP9NB9/yVa/6qUlHlLYw/V51Yp8kE+a5fTggICAgICAg3OI8NVGi1GLAfKR3wMo+RjMYXNe3c1jdtuKrY4m3doic+Ke7ZqoqmMNQZSa/hZjsnfJT66d4R6Z2UMrNfwsx2TvkmuneDTVstMrNfwsx2TvkmuneHdM7PGIDCdkxWljuC8WPQV2KqZ/cxOywxG8IdKZjcxKmW3hDpTMbmJUy28IdKZjd3ErC9oGtw5ymqNyIlgxZtr5hgYMoNI176o3b0VXIx+yem3MUy2LJwZPqHpVqm5GEE212eDiz0rvMhzlmeDiz0pzIOWZ4OLPSnMg5Zng4s9KcyDlmeDiz0pzIOWZ4OLPSnMg5Zng4s9KcyDlmeDiz0pzIOW+o7LybdLe1cwCYBdHzxs1QQ/HsZxvfNYP5rQ4W3FVvKtermKsOFzZvtVnkwh1yZs32pyYNcmbN9q5yYNcmbN9q7yoNcvWFCs4ABfdFGJ8HzVUzWiwVuIxCBVAQEBAQEBAQfV68w2BAQEEBbMLA7HEYkf5aF4FbXA0xNn+5UOJmdbivJs3lb0Qr5k8mzeTRBmTybN5NEGZPJs3k0QZlVrQ3aC+oiIMrkcEBAQEBAQEBB9XrzDYEBAQQJsv8A9uI3+mheBW3wP6P9yz+J/UcWriuICAgICAgICAgICAgIPq9eYbAgICCMtlDA9QrM7Dq9GhiPH8mIUaXLw0uAJs5pNhfXYi+4FocHxVNunRX5Kt+zNU6qUf6C4q5Dmesz6lf71Y932r8i5saC4p5Dmesz6l3vVj3fZyLmxoLinkOZ6zPqTvVj3fZyLmxoLinkOZ6zPqTvVj3fZyLmxoLinkOZ6zPqTvVj3fZyLmxoLinkOZ6zPqTvVj3fZyLmxoLinkOZ6zPqTvVj3fZyLmxoLinkOZ6zPqTvVj3fZyLmxoLinkOZ6zPqTvVj3fZyLmxoLinkOZ6zPqTvVj3fZyLmxoLinkOZ6zPqTvVj3fZyLmxoLinkOZ6zPqTvVj3fZyLmyowJiokAUOYv7Xwx4uXO92Pd9nd7myQ8L7F8pBpQ8/tbEnXvLnNhuuIY1Wbfd2r86oXuOma/8PJZt8PER/l5pJWesiAgICCgCCqAgICAgICAgICAgogBB//Z" alt="Word" width="60">
-      <p class="mt-2">Word</p>
-    </div>
-    <div class="col">
-      <img src="https://cdn.worldvectorlogo.com/logos/microsoft-powerpoint-2013.svg" alt="PowerPoint" width="60">
-      <p class="mt-2">PowerPoint</p>
-    </div>
-    <div class="col">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code" width="60">
-      <p class="mt-2">VS Code</p>
-    </div>
-  </div>
-  <h4 class="text-center text-info mt-4">Operating Systems</h4>
-<div class="d-flex justify-content-center gap-5 flex-wrap text-center mt-4">
-  <div>
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux" width="60">
-    <p class="mt-3">Linux</p>
-  </div>
-  <div>
-    <img src="https://cdn-icons-png.flaticon.com/512/732/732225.png" alt="Windows" width="60">
-    <p class="mt-3">Windows</p>
-  </div>
-</div>
-
-</section>
-
-<!-- Add or update these styles in your <head> or main CSS file -->
-  <style>
-    /* Highlight style */
-    .highlight {
-      color: #007bff;
-      font-weight: 600;
-    }
-  
-    /* Tech stack badges */
-    .tech-stack {
-      margin-top: 6px;
-      font-size: 0.95rem;
-    }
-    .tech-stack span {
-      display: inline-block;
-      background: #e9ecef;
-      color: #333;
-      padding: 3px 8px;
-      margin: 2px 5px 2px 0;
-      border-radius: 12px;
-      font-size: 0.85rem;
-    }
-  
-    /* Project card styling with white border */
-    .project {
-      background: #1e2b3c;
-      border: 1px solid #ffffff; /* White border */
-      border-radius: 12px;
-      padding: 20px;
-      margin-bottom: 30px;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
-      transition: transform 0.2s ease, box-shadow 0.3s ease;
-    }
-    .project:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
-    }
-  
-    /* GitHub button style */
-    .github-btn {
-      display: inline-block;
-      margin-top: 10px;
-      color: #fff;
-      background-color: #24292e;
-      padding: 6px 12px;
-      border-radius: 6px;
-      font-size: 0.85rem;
-      text-decoration: none;
-      transition: background 0.2s ease;
-    }
-    .github-btn:hover {
-      background-color: #444;
-    }
-    /* Resume Section */
-#resume {
-  padding: 40px 20px;
-  text-align: center;
-}
-
-.resume-container {
-  background-color: #fff;
-  border: 2px solid #ddd;
-  border-radius: 15px;
-  padding: 30px 20px;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
-  display: inline-block;
-  max-width: 500px;
-  margin-top: 20px;
-}
-
-.resume-btn {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 10px 25px;
-  background-color: #007bff;
-  color: white;
-  font-weight: 500;
-  border-radius: 8px;
-  transition: background-color 0.3s ease;
-  text-decoration: none;
-}
-
-.resume-btn:hover {
-  background-color: #0056b3;
-  text-decoration: none;
-  color: white;
-}
-
-  </style>
-  
-  <section id="project" class="section fade-left">
-    <h2 class="section-title">💼 Projects</h2>
-  
-    <!-- Adaptive Traffic Routing System Project -->
-    <div class="project">
-      <h5>
-        
-          🚦 Adaptive Traffic Routing System
-        
-      </h5>
-      <p>
-        Developed an <span class="highlight">adaptive traffic routing system</span> using Dijkstra’s algorithm in C to compute the 
-        <span class="highlight">shortest path</span> between cities. The system accepts <span class="highlight">live user input</span> for distances and simulates 
-        <span class="highlight">smart routing</span> decisions to reduce congestion and enhance travel efficiency.
-      </p>
-      <div class="tech-stack">
-        <span>C Programming</span>
-        <span>Dijkstra’s Algorithm</span>
-        <span>Graph Theory</span>
-      </div>
-      <a class="github-btn" href="https://github.com/Vijesh1407/Adaptive-Traffic-Routing-Solution" target="_blank">
-        View on GitHub ↗
-      </a>
-    </div>
-  
-    <!-- RTO Database System Project -->
-    <div class="project">
-      <h5>
-    
-          📊 RTO Database System
-     
-      </h5>
-      <p>
-        Designed an <span class="highlight">Entity-Relationship Diagram (ERD)</span> for a Regional Transport Office (RTO) management system. 
-        Focused on ensuring <span class="highlight">data integrity</span> and applying <span class="highlight">normalization techniques</span> 
-        to eliminate redundancy and boost future scalability for managing registrations, ownership transfers, fine processing, and employee operations.
-      </p>
-      <div class="tech-stack">
-        <span>Database Design</span>
-        <span>ERD Modeling</span>
-        <span>Normalization</span>
-      </div>
-      <a class="github-btn" href="https://github.com/Vijesh1407/RTO-Database-design" target="_blank">
-        View on GitHub ↗
-      </a>
-    </div>
-  
-    <!-- Tourist Booking Hub Project -->
-    <div class="project">
-      <h5>
-        
-          🌍 Tourist Booking Hub
-        
-      </h5>
-      <p>
-        Developed the <span class="highlight">frontend interface</span> of a comprehensive tourist booking platform. This project features interactive sections
-        for <span class="highlight">Stays</span>, <span class="highlight">Flights</span>, and <span class="highlight">Attractions</span>, complemented by integrated 
-        search forms and dynamic destination listings. Emphasis was placed on delivering a consistent and responsive user experience.
-      </p>
-      <div class="tech-stack">
-        <span>HTML</span>
-        <span>CSS</span>
-        <span>JavaScript</span>
-        <span>Bootstrap</span>
-      </div>
-      <a class="github-btn" href="https://github.com/Vijesh1407/Tourist-booking-Hub" target="_blank">
-        View on GitHub ↗
-      </a>
-    </div>
-  </section>
-  
-
-
-
-    <!-- Achievements Section -->
-    <section id="achievement" class="section fade-left">
-      <h2 class="section-title">🏅 Achievements</h2>
-      <ul class="achievement">
-        <li>Achieved <span class="highlight">90%</span> (Elite Gold) in <span class="highlight">NPTEL - Python for Data Science</span> – Top 1%</li>
-        <li>Achieved <span class="highlight">82%</span> (Elite Silver) in <span class="highlight">NPTEL - Introduction to Machine Learning</span> – Top 1%</li>
-        <li>Scored <span class="highlight">86.6 percentile</span> in <span class="highlight">JEE (Main) 2023</span></li>
-      </ul>
-    </section>
-    
-
-<!-- Certifications Section -->
-<section id="certification" class="section fade-left">
-  <h2 class="section-title">📜 Certifications</h2>
-  <ul class="achievement">
-    <li><a href="https://internalapp.nptel.ac.in/NOC/NOC25/SEM1/Ecertificates/106/noc25-cs60/Course/NPTEL25CS60S44330402101411705.pdf" target="_blank">
-      Python for Data Science – NPTEL</a></li>
-    <li><a href="https://internalapp.nptel.ac.in/NOC/NOC25/SEM1/Ecertificates/106/noc25-cs59/Course/NPTEL25CS59S34330348001411705.pdf" target="_blank">
-      Programming, Data Structures and Algorithms Using Python – NPTEL</a></li>
-      <li><a href="https://drive.google.com/file/d/10X0V18LDxtVNCz2Xvg9OwPvt8gxyxeHO/view?usp=drivesdk" target="_blank">Electrowiz'25 Paper Presentation – VEC</a></li>
-      <li><a href="https://unstop.com/certificate-preview/c1dc7166-7dbe-41bb-9707-d64604ca8882" target="_blank">
-        Hackz'24 – CSEA_CEG</a></li>
-    <li><a href="https://internalapp.nptel.ac.in/NOC/NOC24/SEM2/Ecertificates/106/noc24-cs73/Course/NPTEL24CS73S13310744402776557.pdf" target="_blank">
-        Introduction to Machine Learning – NPTEL</a></li>
-    <li><a href="https://drive.google.com/file/d/1sIvhOL4OavNCWePkoEIEqePDt68MqGPf/view?usp=drive_link" target="_blank">
-      JEE (Main) 2023</a></li>
-  </ul>
-</section>
-
-<!-- Workshops Section -->
-<section id="workshop" class="section fade-left">
-  <h2 class="section-title">🛠️ Workshops</h2>
-  <ul class="achievement">
-    <li><a href="https://drive.google.com/file/d/1Cb3fJbudNk58vaTQhArRDGRcnmEHaNCF/view?usp=drivesdk">Cricket Data Analysis using PostgreSQL – NPTEL</a></li6>
-    <li><a href="https://drive.google.com/file/d/19q5hT7zZdOJdgVIg4rfb_t8rEJ1JpBrM/view?usp=drivesdk">Mastering Strategy Formulation with ChatGPT – NPTEL</a></li>
-  </ul>
-</section>
-
-<section id="resume" class="section fade-left text-center">
-  <h2 class="section-title">📄 Resume</h2>
-  <p>Check out my resume.</p>
-  <a href="https://drive.google.com/file/d/1gMi7QTkPveoVjHJFPcoafwoRykBabO4n/view?usp=drivesdk" target="_blank" class="btn btn-primary mt-2">
-    View Resume ↗
-  </a>
-</section>
-    <section id="activities" class="section fade-left">
-      <h2 class="section-title">🤝 Activities & Roles</h2>
-      <ul>
-        <li>📌 Placement Representative – Department of Information Technology, MIT, Anna University (Jan 2025 – Present)</li>
-        <li>🎯 NSO Volunteer – MIT, Anna University (Sep 2023 – Aug 2024)</li>
-      </ul>
-    </section>
-
-    <section id="contact" class="section fade-left">
-      <h2 class="section-title">📞 Contact Me</h2>
-      <p><i class="fas fa-phone-alt card-icon"></i> <strong>Phone:</strong> <a href="tel:+916383984328">+91 63839 84328</a></p>
-      <p><i class="fas fa-envelope card-icon"></i> <strong>Email:</strong> <a href="mailto:vijeshthamodharan@gmail.com">vijeshthamodharan@gmail.com</a></p>
-      <p><i class="fas fa-map-marker-alt card-icon"></i> <strong>Location:</strong> Chennai, India</p>
-    </section>
-
-    <footer>
-      <p>© 2025 Vijesh T • All Rights Reserved.</p>
-    </footer>
-  </div>
-
-  <!-- Scroll Reveal Script -->
-  <script>
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('revealed');
-        } else {
-          entry.target.classList.remove('revealed');
-        }
-      });
-    }, { threshold: 0.2 });
-
-    document.querySelectorAll('.section').forEach(section => {
-      observer.observe(section);
-    });
-  </script>
-  <script>
-    window.addEventListener('scroll', function () {
-      const navbar = document.querySelector('.navbar');
-      navbar.classList.toggle('scrolled', window.scrollY > 50);
-    });
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  
-
+    <script src="section_reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
