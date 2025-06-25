@@ -1,0 +1,30 @@
+const observer=new IntersectionObserver(
+    (entries)=>
+    {
+        entries.forEach(
+            entry=>
+            {
+                if(entry.isIntersecting)
+                {
+                    entry.target.classList.add('revealed');
+                }
+                else
+                {
+                    entry.target.classList.remove('revealed');
+                }
+            }
+        );
+    },{threshold:0.2}
+);
+document.querySelectorAll('.section').forEach(
+    section=>
+    {
+        observer.observe(section);
+    }
+);
+window.addEventListener(
+    'scroll',function(){
+        const navbar=document.querySelector('.navbar');
+        navbar.classList.toggle('scrolled',window.scrollY>50);
+    }
+);
